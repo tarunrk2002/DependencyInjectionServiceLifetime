@@ -1,8 +1,12 @@
+using dependency_Injection_service_lifetime.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddSingleton<ISingletonGuidServices, SingletonGuidServices>();
+builder.Services.AddScoped<IScopedGuidServices, ScopedGuidServices>();
+builder.Services.AddTransient<ITransientGuidServices, TransientGuidServices>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
