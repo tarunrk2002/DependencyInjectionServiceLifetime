@@ -7,6 +7,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<ISingletonGuidServices, SingletonGuidServices>();
 builder.Services.AddScoped<IScopedGuidServices, ScopedGuidServices>();
 builder.Services.AddTransient<ITransientGuidServices, TransientGuidServices>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -21,6 +22,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
 
 app.UseAuthorization();
 
